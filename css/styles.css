@@ -1,0 +1,259 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 0.5rem 0;
+}
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+section.content {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.project-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out; /* smooth transition effect */
+}
+
+.project-header {
+    /* display: flex; */
+    align-items: center;    /* Vertically align everything in the middle */
+    padding: 0px;
+}
+
+.projects {
+    /* background-color: #f0f0f0; */
+    background-color: #fff;
+  }
+   
+.project-title {
+    font-size: 1.2em; /* Change as needed */
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    border-radius:10px;
+    margin: 1px;
+    cursor: pointer;
+}
+  
+.project {
+    background-color: #fff;
+}
+
+/* .project-details {
+    display: none;
+    padding: 5px;
+} */
+
+.project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+    /* Additional styles as needed */
+}
+
+.project-details.open {
+    max-height: 1000px; /* Adjust this value as per your content size */
+}
+
+
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;        /* Adjust the size of the arrow. Use a value that looks good to you. */
+    line-height: 1;         /* Ensures that the button doesn't have extra height */
+    padding: 0;             /* Remove any default padding */
+    vertical-align: middle; /* Align the arrow in the middle relative to the text */
+    transition: 0.3s;       /* Optional: Smooth transition for the rotation */
+}
+
+/* Add a style for when the content is expanded (optional) */
+.toggle-button.expanded {
+    transform: rotate(180deg);  /* Rotate the arrow 180 degrees */
+}
+
+.contact-list a {
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: inherit; 
+    padding-left: 24px;   /* Add space to the left to account for the icon */
+    position: relative;  /* For positioning the icon */
+}
+
+.contact-list i {
+    position: absolute;  /* Position icon absolutely within the link */
+    left: 0;             /* Align the icon to the very left of the link */
+    margin-right: 8px;
+    color: #777;         /* Default color for the icons */
+}
+
+
+
+.status-icon {
+    color: #777; /* Green */
+}
+
+.skills-icon {
+    color: #777; /* Blue */
+}
+  
+.date-first {
+    margin-right: 5px;
+}
+.date {
+    margin: 0 5px; /* Adjust as needed */
+    /* Add other styles as needed */
+}
+
+.date-icon {
+    color: #777; /* Adjust color as needed */
+    /* Add other styles as needed */
+}
+
+/* IMAGES */
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* Updated Style for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+.modal-content {
+    position: absolute;
+    /* top: 10%;
+    left: 10%; */
+    /* transform: translate(-50%, -50%); */
+    max-width: 40%; 
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0s;
+}
+
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.project-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-image-container {
+    width: calc(20% - 10px); /* Adjusted for 5 images per row */
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px; /* Optional for rounded corners */
+}
+
+.project-image-container::before {
+    content: "";
+    display: block;
+    padding-top: 100%; /* This creates a square aspect ratio */
+}
+
+.project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.project-image:hover {
+    transform: scale(1.1);
+}
+
+.project-image:active {
+    transform: scale(5);
+}
+
+.project-sub-title {
+    font-size: 20px;
+    margin: 20px 0 10px 0; /* Top and bottom margin for spacing */
+    color: #333; /* You can set your own color */
+}
+
+
+/* CONTACTS */
+
+.contact-list a[href^="mailto:"] i {
+    color: #D44638;      /* Gmail Red, adjust as needed */
+}
+.contact-list a[href*="facebook.com"] i {
+    color: #1877F2;      /* Facebook Blue */
+}
+.contact-list a[href*="instagram.com"] i {
+    color: #C32AA3;      /* Instagram Gradient Color, simple representation */
+}
+.contact-list a[href*="github.com"] i {
+    color: #333;         /* GitHub Black/Grey */
+}
+.contact-list a[href*="linkedin.com"] i {
+    color: #0A66C2;  /* LinkedIn Blue */
+}
+
