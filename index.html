@@ -1,4 +1,3 @@
-<!-- Create sample page for my portfolio -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Name - Engineering Portfolio</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="css/project_styles.css" />
+    <link rel="stylesheet" href="css/hobbies-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script src="js/main.js"></script>
   </head>
   <body>
     <header>
       <h1>Laimonas Ramanauskas</h1>
-      <p>Maker at the heart</p>
     </header>
 
     <nav>
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
+      <div class="dropdown">
+        <a href="#projects" class="project-link">Projects</a>
+        <div class="dropdown-content">
+          <a href="#2023">2023</a>
+          <a href="#2022">2022</a>
+          <a href="#2021">2021</a>
+          <a href="#2020">2020</a>
+          <a href="#2019">2019</a>
+          <a href="#2018">2018</a>
+        </div>
+      </div>
+      <a href="#hobbies">Hobbies</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -32,186 +35,496 @@
     <section class="content" id="home">
       <h2>Welcome to My Portfolio</h2>
       <p>
-        This is testing page for my portfolio. Currently, it is a work in
-        progress.
+        &emsp; &emsp;This is the beta version of my portfolio. Initially, I created it as a personal repository to
+        collect information from my various projects that is otherwise scattered. It's a tool for me to quickly recall
+        and refer to my past works. However, as the development progressed, I realized its potential as a platform to
+        publicly showcase my skills and knowledge. Hence, I decided to make it accessible to all. <br />
+        &emsp; &emsp;Here, you’ll find a collection of various projects I’ve been involved in. The portfolio includes a
+        mix of both major and minor projects. Some of the detailed and actual projects are excluded because they were
+        developed for commercial purposes or are under confidentiality agreements <br />
+        &emsp; &emsp; This portfolio is a work in progress. I am in the process of retrieving archives of my older
+        projects to include here. Moving forward, my intention is to update this page in real-time as projects progress,
+        rather than after their completion – though the feasibility of this approach remains to be tested:)
       </p>
     </section>
 
-    <!-- Project Section -->
-    <section id="projects" class="content">
+    <!-- Projects Section -->
+
+    <!-- Overview of Projects (Incomplete List)
+    
+    ** 2023 ** 
+    - CoreXY 3D Printer 
+    - Aluminum Chip Press Thesis
+    - Drone Radar
+
+    ** 2022 ** 
+    - ESP32 Stepper Driver + Camera
+    - Digital Twin (Upload Pending)
+
+    ** 2020 ** 
+    - 30T Aluminum Chip Briquetter 
+    - Lithophane Image 
+    - Military Training System (Upload Pending)
+
+    ** 2019 ** 
+    - Arduino Cell Charger
+
+    ** 2018 ** 
+    - '80s Boombox Upgrade 
+    - Wooden Lantern 
+
+    ** Older Projects ** 
+    - Mini Tesla Coil (Upload Pending)
+    - Physics Calculator App (Upload Pending)
+    - Wooden Rubber Band Gun (Upload Pending)
+    
+    -->
+
+    <div class="projects-container" id="projects">
       <h2>Projects</h2>
 
-      <!-- Project Category or Year -->
-      <div class="project-category">
-        <h3>2022 Projects</h3>
+      <!-- YEAR 2023 -->
+      <div class="year">
+        <h3 id="2023" class="year-header">2023</h3>
+        <div class="projects">
+          <!-- Projects starts here -->
+          <!-- Project: CoreXY 3D Printer -->
+          <article id="coreXYPrinter" class="project">
+            <a href="projects/2023_corexy_3d_printer/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img src="projects/2023_corexy_3d_printer/images/cover.jpg" alt="CoreXY 3D Printer Project" />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2023_corexy_3d_printer/project-page.html" class="project-title">CoreXY 3D Printer</a>
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Oct 2022
+                  <span class="meta-title duration">Duration:</span> 8 Months <span class="meta-title">Status:</span> In
+                  Progress
+                </p>
+                <p><span class="meta-title">Skills:</span> Linux, 3D Modeling, Mechanical engineering</p>
+              </div>
+              <p class="project-description">
+                I began this project to upgrade my old Ender 3 printer and bought an unfinished D-bot printer thinking
+                it would be easy and cheap to complete (Spoiler: I was wrong). Progress is at a leisurely pace, with
+                improvements made as my spare time allows. The printer now runs on
+                <a class="link-in-project-desc" href="https://www.klipper3d.org/Features.html" target="_blank">
+                  Klipper
+                </a>
+                with Mainsail UI, has a build volume of 350m^3, and a max speed of 200mm/s. It’s working but still needs
+                some mechanical tweaks to be perfect.
+                <a class="read-more" href="projects/2023_corexy_3d_printer/project-page.html">Read More...</a>
+              </p>
+            </div>
+          </article>
 
-        <!-- Project 1 -->
-        <article id="project1" class="project">
-          <h4>Arduino Li-ion Cell Tester</h4>
-          <img
-            src="projects/arduino_cell_tester/image1.jpg"
-            alt="Arduino Cell Tester"
-          />
-          <p>
-            This project involved creating a comprehensive system designed to
-            test and analyze the performance of Li-ion cells using Arduino. The
-            project was completed over 5 months, from January to June 2022.
-          </p>
-          <ul>
-            <li>
-              <strong>Technologies Used:</strong> Arduino, Electronics,
-              Programming
-            </li>
-            <li><strong>Status:</strong> Completed</li>
-            <li><a href="details1.html">Read More</a></li>
-          </ul>
-        </article>
+          <!-- Project: Escape Room Electric Boxes -->
+          <article id="escapeRoomBoxes" class="project">
+            <a href="projects/2023_escape_room_boxes/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img src="projects/2023_escape_room_boxes/images/cover.jpg" alt="Escape Room Electric Boxes Project" />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2023_escape_room_boxes/project-page.html" class="project-title"
+                  >Escape Room Electric Boxes</a
+                >
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Apr 2023 |
+                  <span class="meta-title duration">Duration:</span> 2 weeks |
+                  <span class="meta-title">Status:</span> Completed
+                </p>
+                <p><span class="meta-title">Skills:</span> Python Scripting, Design, Restoration</p>
+              </div>
+              <p class="project-description">
+                I received a request to create three boxes styled to look old, where players enter a combination. When
+                the right combination is entered, the Raspberry Pi Pico controller sends a command to the game master's
+                PC via USB. I also modified an old phone to let the game master communicate with players through a PC,
+                using a 3.5mm aux connection. Unfortunately, due to a tight deadline, I didn’t get a chance to take
+                photos of the finished project.
+                <a class="read-more" href="projects/2023_escape_room_boxes/project-page.html">Read More...</a>
+              </p>
+            </div>
+          </article>
 
-        <!-- Project 2 -->
-        <article id="project2" class="project">
-          <h4>30T Aluminum Chip Briquetter</h4>
-          <img
-            src="projects/aluminum_chip_briquetter/image1.jpg"
-            alt="Aluminum Chip Briquetter"
-          />
-          <p>
-            Developed a 30T Aluminum Chip Briquetter that is capable of
-            efficiently compacting aluminum chips into dense briquettes. This
-            project enhances the recycling process and aids in waste management
-            in industrial settings.
-          </p>
-          <ul>
-            <li>
-              <strong>Technologies Used:</strong> 3D Modeling, Electronics,
-              Programming
-            </li>
-            <li><strong>Status:</strong> Completed</li>
-            <li><a href="details2.html">Read More</a></li>
-          </ul>
-        </article>
+          <!-- Project: 30t Aluminum Press Remake, Final Year Bachelor's Thesis -->
+          <article id="30tChipPressRemake" class="project">
+            <a href="projects/2023_30t_chip_press_remake/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img
+                  src="projects/2023_30t_chip_press_remake/images/cover.jpg"
+                  alt="30t Aluminum Chip Press Remake Project"
+                />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2023_30t_chip_press_remake/project-page.html" class="project-title"
+                  >30t Aluminum Chip Press Bachelor's final year thesis</a
+                >
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Dec 2022 |
+                  <span class="meta-title duration">Duration:</span> 4 Months |
+                  <span class="meta-title">Status:</span> Completed
+                </p>
+                <p>
+                  <span class="meta-title">Skills:</span> Mechanical Design, Electrical Engineering, PLC Programming,
+                  ISO Standards
+                </p>
+              </div>
+              <p class="project-description">
+                For my final year bachelor's thesis, I decided to examine some flows in the old project "aluminum chip
+                press". In my papers I made market analysis, some mechanical design modifications, created technical
+                drawings, calculated maximum forces on crytical parts and made an economic analysis.
+                <a class="read-more" href="projects/2023_30t_chip_press_remake/project-page.html">Read More...</a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Project: Drone Radar -->
+          <article id="droneRadar" class="project">
+            <a href="projects/2023_drone_radar/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img src="projects/2023_drone_radar/images/cover.jpg" alt="Drone Radar Project" />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2023_drone_radar/project-page.html" class="project-title">Drone Radar</a>
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Feb 2023 |
+                  <span class="meta-title duration">Duration:</span> 48 hours |
+                </p>
+                <p><span class="meta-title">Status:</span> Concept prototype finsihed</p>
+                <p><span class="meta-title">Skills:</span> SDR Technology, Radar System, C/C++ Programming</p>
+              </div>
+              <p class="project-description">
+                During the Garage48 Hackathon "Defence for Ukraine" in Estonia, our team of four conceptualized a drone
+                radar system. It uses two antennas and ESP32s to measure RSSI strength, with a Raspberry Pi calculating
+                differences to control a camera on a two-axis gimbal. The concept is established, but needs more
+                development for a complete prototype.
+                <a class="read-more" href="projects/2023_drone_radar/project-page.html">Read More...</a>
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
 
-      <!-- Another Project Category or Year -->
-      <div class="project-category">
-        <h3>2023 Projects</h3>
-
-        <!-- Project 3 -->
-        <article id="project3" class="project">
-          <h4>CoreXY 3D Printer</h4>
-          <img
-            src="projects/corexy_3d_printer/image1.jpg"
-            alt="CoreXY 3D Printer"
-          />
-          <p>
-            An ongoing project aiming to develop a highly efficient and reliable
-            3D printer using the CoreXY model. The printer is designed to offer
-            precision printing with enhanced speed and reliability.
-          </p>
-          <ul>
-            <li>
-              <strong>Technologies Used:</strong> 3D Printing, Mechanical
-              Design, Electronics
-            </li>
-            <li><strong>Status:</strong> In Progress</li>
-            <li><a href="details3.html">Read More</a></li>
-          </ul>
-        </article>
-
-        <!-- Additional projects follow a similar structure -->
+      <!-- YEAR 2022 -->
+      <div class="year">
+        <h3 id="2022" class="year-header">2022</h3>
+        <div class="projects">
+          <!-- Project 2: ESP32 Web Controlled Stepper Driver -->
+          <article id="esp32Driver" class="project">
+            <a href="projects/2022_esp32_web_steppers_driver/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img
+                  src="projects/2022_esp32_web_steppers_driver/images/cover.jpg"
+                  alt="ESP32 Web Controlled Stepper Driver Project"
+                />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2022_esp32_web_steppers_driver/project-page.html" class="project-title"
+                  >ESP32 Web Controlled Stepper Driver</a
+                >
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Sep 2021
+                  <span class="meta-title duration">Duration:</span> 7 Months
+                  <span class="meta-title">Status:</span> Working prototype finished
+                </p>
+                <p>
+                  <span class="meta-title">Skills:</span> RTOS, esp32, Web applications, Optimization, C/C++
+                  Programming, Electronics
+                </p>
+              </div>
+              <p class="project-description">
+                I developed a real-time system to operate two stepper motors and transmit live video to a web app.
+                Challenges included ensuring rapid, precise movement under weight, maintaining operator safety, and
+                sustaining WiFi connectivity at a distance, especially with the device in a Faraday cage. I addressed
+                most issues, but couldn't make the system consumer-ready.
+                <a class="read-more" href="projects/2022_esp32_web_steppers_driver/project-page.html"
+                  >Read More (WORKS)...</a
+                >
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
-    </section>
 
-    <!-- Hobbies Section -->
-    <section id="hobbies" class="content">
-      <h2>Hobbies</h2>
-      <p>
-        I'm passionate not just about engineering and technology, but also about
-        exploring diverse hobbies that fuel my creativity and innovation. Here
-        are some of my hobbies:
-      </p>
+      <!-- YEAR 2021 -->
+      <!-- <div class="year">
+        <h3 id="2021" class="year-header">2021</h3>
+        <div class="projects">
+        </div>
+      </div> -->
 
-      <!-- Hobby 1: Flying Drones -->
-      <article id="hobby1" class="hobby">
-        <h3>Flying Drones</h3>
-        <img src="images/drone_flying.jpg" alt="Flying a Drone" />
-        <p>
-          I'm fascinated by the capability and potential of drones. From
-          capturing breathtaking aerial views to experimenting with various
-          flying techniques, drones offer a unique blend of technology,
-          photography, and outdoor enjoyment.
-        </p>
-      </article>
+      <!-- YEAR 2020 -->
+      <div class="year">
+        <h3 id="2020" class="year-header">2020</h3>
+        <div class="projects">
+          <!-- Project 5: 30T Aluminum Chip Briquetter -->
+          <article id="aluminumChipBriquetter" class="project">
+            <a href="projects/2020_30t_aluminum_chip_press/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img
+                  src="projects/2020_30t_aluminum_chip_press/images/cover.jpg"
+                  alt="30T Aluminum Chip Briquetter Project"
+                />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2020_30t_aluminum_chip_press/project-page.html" class="project-title"
+                  >30T Aluminum Chip Press</a
+                >
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Jun 2020
+                  <span class="meta-title duration">Duration:</span> 8 Months
+                  <span class="meta-title">Status:</span> Prototype Completed
+                </p>
+                <p><span class="meta-title">Skills:</span> PLC Programming, Industrial Equipement Design and Repair</p>
+              </div>
+              <p class="project-description">
+                This industrial press for compressing metal chips from milling and turning operations was a
+                collaborative project with Vyliaudas Stragas. I joined after the initial mechanical design phase. My
+                responsibilities included integrating mechanical movements, electrical wiring, sensor installation,
+                designing the electric cabinet, programming cycles, and ensuring electrical safety.
+                <a class="read-more" href="projects/2020_30t_aluminum_chip_press/project-page.html">Read More...</a>
+              </p>
+            </div>
+          </article>
 
-      <!-- Hobby 2: 3D Printing -->
-      <article id="hobby2" class="hobby">
-        <h3>3D Printing</h3>
-        <img src="images/3d_printing.jpg" alt="3D Printing" />
-        <p>
-          3D printing brings ideas to life, offering a tangible touch to
-          concepts and designs. It's a playground where engineering meets art,
-          and the possibilities are endless - from functional prototypes to
-          intricate art pieces.
-        </p>
-      </article>
+          <!-- Project: Lithophane Image -->
+          <article id="lithophaneImage" class="project">
+            <a href="projects/2020_lithophane_image/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img src="projects/2020_lithophane_image/images/cover.jpg" alt="Lithophane Image Project" />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2020_lithophane_image/project-page.html" class="project-title"> Lithophane Image </a>
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Mar 2020 |
+                  <span class="meta-title duration">Duration:</span> 1 Month |
+                  <span class="meta-title">Status:</span> Completed
+                </p>
+                <p><span class="meta-title">Skills:</span> 3D Printing, Design, Woodworking</p>
+              </div>
+              <p class="project-description">
+                I crafted this "3D" image as a special gift. The image was converted to G-code using online tools and
+                printed with PLA plastic. To ensure an even light source I used a tablet screen backlight. The image
+                appears when light shines through the plastic; variations in thickness create different light
+                intensities, revealing the image. It's powered by a 5Ah Li-po battery with a magnetic charge connection,
+                which can last up to 56 hours.
+                <a class="read-more" href="projects/2020_lithophane_image/project-page.html">Read More...</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
 
-      <!-- Hobby 3: Film Photography -->
-      <article id="hobby3" class="hobby">
-        <h3>Film Photography</h3>
-        <img src="images/film_photography.jpg" alt="Film Photography" />
-        <p>
-          There's a distinct charm and authenticity in film photography that's
-          both nostalgic and artistic. The process, from capturing moments to
-          developing films, is a journey of patience, anticipation, and
-          surprise.
-        </p>
-      </article>
-    </section>
+      <!-- YEAR 2019 -->
+      <div class="year">
+        <h3 id="2019" class="year-header">2019</h3>
+        <div class="projects">
+          <!-- Add 2019 project details here -->
+          <!-- Project: Arduino Cell Charger Based on VortexIT Design -->
+          <article id="arduinoCellCharger" class="project">
+            <a
+              href="https://github.com/RLaimonas/Arduino-8x-PCB-Smart-Charger_standalone"
+              class="project-link-wrapper"
+              target="_blank"
+            >
+              <div class="project-image">
+                <img
+                  src="projects/2019_arduino_cell_charger/images/cover.jpg"
+                  alt="Arduino Cell Charger Based on VortexIT Design Project"
+                />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a
+                  href="https://github.com/RLaimonas/Arduino-8x-PCB-Smart-Charger_standalone"
+                  class="project-title"
+                  target="_blank"
+                >
+                  Arduino Cell Charger/Discharger
+                </a>
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Feb 2019 |
+                  <span class="meta-title duration">Duration:</span> 5 Months |
+                  <span class="meta-title">Status:</span> Prototype Completed
+                </p>
+                <p>
+                  <span class="meta-title">Skills:</span> Battery management, Electronics, Circuit Design, C++
+                  Programming
+                </p>
+              </div>
+              <p class="project-description">
+                I needed a device for testing refurbished 18650 Li-ion batteries and modified Brett Watt's
+                <a
+                  class="link-in-project-desc"
+                  href="https://github.com/brettwatty/Arduino-8x-PCB-Smart-Charger-Discharger"
+                  target="_blank"
+                >
+                  VortexIT
+                </a>
+                project to be a standalone device, adding features like multiple charge/discharge cycles for accurate
+                capacity testing and a cell revive mode for safely recovering deep discharged cells. Changes include
+                removing the Ethernet module and barcode scanner, streamlining files, and revising the menu layout.
+                However, the cell revive mode and temperature sensor are unfinished.
+                <a
+                  class="read-more"
+                  href="https://github.com/RLaimonas/Arduino-8x-PCB-Smart-Charger_standalone"
+                  target="_blank"
+                  >Read More...</a
+                >
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- YEAR 2018 -->
+      <div class="year">
+        <h3 id="2018" class="year-header">2018</h3>
+        <div class="projects">
+          <!-- Project: Wooden Lantern -->
+          <article id="woodenLantern" class="project">
+            <a href="projects/2018_wooden_lantern/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img src="projects/2018_wooden_lantern/images/cover.jpg" alt="Wooden Lantern Project" />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2018_wooden_lantern/project-page.html" class="project-title"> Wooden Lantern </a>
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> May 2023 |
+                  <span class="meta-title duration">Duration:</span> 1 Month |
+                  <span class="meta-title">Status:</span> Completed
+                </p>
+                <p><span class="meta-title">Skills:</span> Woodworking, Design, Craftsmanship</p>
+              </div>
+              <p class="project-description">
+                I designed this lantern as a unique gift. Using a capacitive touch sensor, the lantern is designed to
+                light up when touched at the top. I crafted it using a combination of differently colored bamboo and
+                pine. The initial version was wired, but I upgraded the design to include a battery, resulting in up to
+                48 hours of use and improved light distribution.
+                <a class="read-more" href="projects/2018_wooden_lantern/project-page.html">Read More...</a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Project: 90's Boombox -->
+          <article id="90sBoombox" class="project">
+            <a href="projects/2018_90s_boombox/project-page.html" class="project-link-wrapper">
+              <div class="project-image">
+                <img src="projects/2018_90s_boombox/images/cover.jpg" alt="90's Boombox Project" />
+              </div>
+            </a>
+            <div class="project-info">
+              <h4 class="project-title">
+                <a href="projects/2018_90s_boombox/project-page.html" class="project-title"> 90's Boombox Revival </a>
+              </h4>
+              <div class="project-meta">
+                <p>
+                  <span class="meta-title">Start Date:</span> Jan 2018 |
+                  <span class="meta-title duration">Duration:</span> 2 Months |
+                  <span class="meta-title">Status:</span> Completed
+                </p>
+                <p><span class="meta-title">Skills:</span> Restoration, Electronics, Audio Engineering</p>
+              </div>
+              <p class="project-description">
+                Many of us have had the desire to blast music at full volume, but I aspired to do so with a touch of
+                elegance. I purchased a broken Loewe 8694 radio, aiming to restore its classic charm. While its exterior
+                remained untouched, the interior underwent a complete transformation. I installed laser-cut fittings for
+                bigger speakers, added D-class amplifiers, a Bluetooth receiver, and a battery. Even old stereo level
+                indications came back to live.
+                <a class="read-more" href="projects/2018_90s_boombox/project-page.html">Read More...</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
 
     <section class="content" id="about">
       <h2>About Me</h2>
       <p>
-        I am Laimonas, an engineer with a comprehensive background ranging from
-        3D modeling to advanced programming. Over the years, I've affiliated
-        with R&D departments across various sectors, gaining deep insights into
-        the intricacies of the field. My approach is rooted in precision,
-        technical rigor, and a continuous pursuit of innovation. My expertise is
-        a blend of hands-on experience and a keen attention to detail,
-        positioning me to deliver solutions that address complex engineering
-        challenges.
+        &emsp;&emsp;Every project, ignited by curiosity, is a journey of learning where I acquire most of my knowledge.
+        Insights stem from hands-on experiences, unveiling nuances not captured in theoretical study. I’ve discovered
+        connecting patterns in diverse fields. These varied experiences enhance my outlook, allowing me to address
+        immediate challenges and find solutions in different areas. This diverse learning turns obstacles into
+        opportunities for innovation. <br />
+        &emsp; &emsp;At the moment, I'm focused on advancing my expertise in embedded software development and
+        cybersecurity.
       </p>
     </section>
 
+    <!-- Hobbies Section -->
+    <!-- <section id="hobbies" class="content">
+      <h2>Hobbies</h2>
+      <p>
+        
+      </p>
+
+      <article id="hobby1" class="hobby">
+        <h3>Flying Drones</h3>
+        <img src="images/drone_flying.jpg" alt="Flying a Drone" />
+        <p>
+         
+        </p>
+      </article>
+
+      <article id="hobby2" class="hobby">
+        <h3>3D Printing</h3>
+        <img src="images/3d_printing.jpg" alt="3D Printing" />
+        <p>
+          </p>
+      </article>
+
+      <article id="hobby3" class="hobby">
+        <h3>Film Photography</h3>
+        <img src="images/film_photography.jpg" alt="Film Photography" />
+        <p>
+          </p>
+      </article>
+    </section> -->
+
+    <!-- Contact Section -->
     <section class="content" id="contact">
       <h2>Contact</h2>
-      <p>How to reach me:</p>
       <div class="contact-list">
-        <a href="mailto:ram.laimonas@gmail.com"
-          ><i class="fas fa-envelope"></i> ram.laimonas@gmail.com</a
-        >
-        <a
-          href="https://www.linkedin.com/in/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="mailto:ram.laimonas@gmail.com"><i class="fas fa-envelope"></i> ram.laimonas@gmail.com</a>
+        <a href="https://www.linkedin.com/in/laimonas-ramanauskas/" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-linkedin"></i> LinkedIn
         </a>
-
-        <a
-          href="https://www.facebook.com/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><i class="fab fa-facebook-square"></i> Facebook</a
-        >
-        <a
-          href="https://www.instagram.com/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><i class="fab fa-instagram"></i> Instagram</a
-        >
-        <a
-          href="https://github.com/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
+        <a href="https://github.com/RLaimonas" target="_blank" rel="noopener noreferrer"
           ><i class="fab fa-github"></i> GitHub</a
         >
       </div>

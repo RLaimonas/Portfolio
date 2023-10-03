@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project - Under Construction</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <!-- Adjust the path as needed -->
+    <link rel="stylesheet" href="../../css/default-page-styles.css" />
+    <script>
+      // IMAGE MODAL
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const images = document.querySelectorAll(".project-image");
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImage");
+        const span = document.getElementsByClassName("close")[0];
+
+        images.forEach((img) => {
+          img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+
+            // Ensure the image is loaded before calculating its dimensions
+            modalImg.onload = function () {
+              // Get the dimensions of the image and the window
+              const imgHeight = modalImg.clientHeight;
+              const imgWidth = modalImg.clientWidth;
+              const windowHeight = window.innerHeight;
+              const windowWidth = window.innerWidth;
+
+              // Calculate the top and left positions
+              const topPosition = (windowHeight - imgHeight) / 2;
+              const leftPosition = (windowWidth - imgWidth) / 2;
+              modalImg.style.top = topPosition + "px";
+              modalImg.style.left = leftPosition + "px";
+            };
+          };
+        });
+
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      });
+    </script>
+    <!-- Adjust the path as needed -->
+  </head>
+
+  <body>
+    <div class="construction-container">
+      <!-- Adjust the image path as needed -->
+      <h1>Page is not yet published</h1>
+      <p>But here are some pictures from it.</p>
+    </div>
+    <div class="project-images">
+      <div class="project-image-container">
+        <img src="images/1.jpg" alt="Project Image 1" class="project-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/2.jpg" alt="Project Image 2" class="project-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/3.jpg" alt="Project Image 3" class="project-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/4.jpg" alt="Project Image 4" class="project-image" />
+      </div>
+      <!-- <div class="project-image-container">
+        <img src="images/5.jpg" alt="Project Image 5" class="project-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/6.jpg" alt="Project Image 6" class="project-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/7.jpg" alt="Project Image 7" class="project-image" />
+      </div> -->
+      <div class="project-image-container">
+        <img src="images/cover.jpg" alt="Project Image 8" class="project-image" />
+      </div>
+    </div>
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="expandedImage" />
+      <div id="caption"></div>
+    </div>
+  </body>
+</html>

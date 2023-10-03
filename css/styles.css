@@ -1,30 +1,72 @@
+:root {
+    --secondary-color: #2c2c2c;
+    --border-color: #444;
+    --background-color:#1f1f1f;
+    /* --contrast-color: #2fa8ff; */
+    --contrast-color: #6a9955;
+    
+    --project-paragrah-color: #ddd;
+    --project-title-color: white;
+    
+    --max-content-width: 800px;
+  }
+
 /* Reset some default styling */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1c1c1c;
+    background-color: var(--background-color);
     color: white;
     line-height: 1.6;
 }
 
+#home p, #about p{
+    display: flex;
+    margin: 0 auto;
+    font-size: 1rem;
+    text-align: justify;
+    max-width: 960px;
+
+}
+
+.projects-container h2, .content h2  {
+    color: var(--contrast-color);
+}
+
 header {
-    background-color: #1c1c1c;
     padding: 1rem 2rem;
     text-align: left;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--border-color);
+    background-image: url('../assets/images/cover3_v2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    color: white;
+    -webkit-text-stroke-color: var(--border-color);
+}
+
+header h1{
+    font-size: 3rem;
+}
+
+header p{
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 nav {
-    background-color: #1c1c1c;
     padding: 0.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
-    color: #fff;
+    color: white;
     margin: 0 15px;
     text-decoration: none;
     border-bottom: 2px solid transparent;
@@ -34,18 +76,45 @@ nav a:hover {
     border-bottom: 2px solid #fff;
 }
 
-section.content {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 20px;
+/* Style for the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+
 }
 
-footer {
-    background-color: #1c1c1c;
-    text-align: center;
-    padding: 1rem 0;
-    border-top: 1px solid #444;
-    margin-top: 2rem;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 100%;
+}
+  
+  /* Style for each link inside the dropdown */
+.dropdown-content a {
+    color: white;
+    background-color: var(--background-color);
+    padding: 5px 0px;
+    margin: 0;
+    text-decoration: none;
+    display: block;
+}
+  
+  /* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+  /* Optional - Style for a link inside dropdown on hover */
+.dropdown-content a:hover {
+    background-color: var(--contrast-color);
+}
+
+section.content {
+    margin: 0rem auto;
+    padding: 10px;
 }
 
 h2 {
@@ -56,4 +125,49 @@ h2 {
     color: #fff;
 }
 
-/* Add other necessary styles and modifications as per your requirements */
+/* CONTACTS */
+#contact {
+    padding: 50px;
+    color: white;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--contrast-color);
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 10px;
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+
+.contact-list a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 1.2rem; 
+    display: flex;
+    align-items: center; 
+    transition: color 0.3s ease-in-out; 
+}
+
+.contact-list i {
+    margin-right: 10px; 
+    font-size: 1.5rem; 
+}
+
+/* Change color on hover */
+.contact-list a:hover {
+    color: var(--contrast-color);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #444;
+}
+
