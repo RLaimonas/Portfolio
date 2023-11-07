@@ -13,11 +13,12 @@
     border-left: 1px solid var(--third-color);
     border-right: 1px solid var(--third-color);
     flex-grow: 1;
-    max-width: 800px;
+    max-width: calc(var(--max-content-width) * var(--project-width-ratio));
 }
 
 .project .project-image {
     flex-shrink: 0; 
+    padding-top: 0.5rem;
     height: 200px; 
     width: 200px; 
 }
@@ -38,7 +39,7 @@
 }
 
 .project .project-title {
-    font-size: 24px;
+    font-size: 2rem;
     margin: 0;
     border: 0;
     padding-top: 2px;
@@ -65,6 +66,8 @@
 .project .project-meta p {
     margin: 1px 0;
     text-align: left;
+    display: block;
+    width: 100%;
     color: var(--project-paragrah-color);
 }
 
@@ -76,10 +79,10 @@
 }
 
 .project .project-description {
-    margin: 10px 0;
+    margin: 0.1rem 0;
     text-align: justify;
     flex-grow: 1;
-    font-size: small;
+    font-size: 1.05rem;
     color: var(--project-paragrah-color);
 
 }
@@ -92,6 +95,10 @@
     margin-left: 0px; 
 }
 
+.project .read-more:hover {
+    color: var(--contrast-color-light);
+}
+
 .project .link-in-project-desc{
     font-weight: bold;
     color: var(--project-paragrah-color);
@@ -102,14 +109,56 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+@media (max-width: 900px){
+    .project .project-description { 
+        font-size: 0.9rem;    
+    }
+    .project .project-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 800px) {
     .project {
         flex-direction: column;
         align-items: center;
     }
 
     .project .project-info {
-        padding: 10px;
+        padding: 0.1rem;
         text-align: left;
     }
+    .project .project-image {
+        flex-shrink: 0; 
+        height: 10rem; 
+        width: 10rem; 
+    }
+    .project .project-title {
+        text-align: center;
+        font-size: 2rem;
+    }
 }
+
+@media (max-width: 1200px) {
+    :root{
+        --project-width-ratio: 1;
+    } 
+    .project .project-image {
+        flex-shrink: 0; 
+        height: 400px; 
+        width: 400px; 
+    }
+}
+
+@media (max-width: 1250px) {
+    :root{
+        --project-width-ratio: 0.94;
+    } 
+    .project .project-image {
+        flex-shrink: 0; 
+        height: 300px; 
+        width: 300px; 
+    }
+}
+

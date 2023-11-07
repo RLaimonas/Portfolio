@@ -48,41 +48,54 @@
         };
       });
     </script>
-    <!-- Adjust the path as needed -->
+    <!-- Gif on hover player -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var images = document.querySelectorAll(".static-image");
+
+        images.forEach(function (img) {
+          var gifSrc = img.getAttribute("data-gif");
+          var staticSrc = img.src;
+
+          img.addEventListener("mouseover", function () {
+            img.src = gifSrc;
+          });
+
+          img.addEventListener("mouseout", function () {
+            img.src = staticSrc;
+          });
+        });
+      });
+    </script>
   </head>
 
   <body>
     <div class="construction-container">
       <!-- Adjust the image path as needed -->
-      <h1>Page is not yet published</h1>
-      <p>But here are some pictures from it.</p>
+      <h1>Unity3D Game developement courses</h1>
+      <p>
+        Here I explored different game mechanics and styles. Games: 1. 2D Platformer 2. Gyroscope maze runner 3. 3D
+        platformer (cover) 4. Ping-pong 5. Maze runner
+      </p>
     </div>
     <div class="project-images">
       <div class="project-image-container">
-        <img src="images/1.jpg" alt="Project Image 1" class="project-image" />
+        <img src="images/1.jpg" data-gif="images/1.gif" alt="Project Image 1" class="project-image static-image" />
       </div>
       <div class="project-image-container">
-        <img src="images/2.jpg" alt="Project Image 2" class="project-image" />
+        <img src="images/2.jpg" data-gif="images/2.gif" alt="Project Image 2" class="project-image static-image" />
       </div>
       <div class="project-image-container">
-        <img src="images/3.jpg" alt="Project Image 3" class="project-image" />
-      </div>
-      <!-- <div class="project-image-container">
-        <img src="images/4.jpg" alt="Project Image 4" class="project-image" />
+        <img src="images/3.jpg" data-gif="images/3.gif" alt="Project Image 3" class="project-image static-image" />
       </div>
       <div class="project-image-container">
-        <img src="images/5.jpg" alt="Project Image 5" class="project-image" />
+        <img src="images/4.jpg" data-gif="images/4.gif" alt="Project Image 4" class="project-image static-image" />
       </div>
       <div class="project-image-container">
-        <img src="images/6.jpg" alt="Project Image 6" class="project-image" />
-      </div>
-      <div class="project-image-container">
-        <img src="images/7.jpg" alt="Project Image 7" class="project-image" />
-      </div> -->
-      <div class="project-image-container">
-        <img src="images/cover.jpg" alt="Project Image 8" class="project-image" />
+        <img src="images/5.jpg" data-gif="images/5.gif" alt="Project Image 5" class="project-image static-image" />
       </div>
     </div>
+
     <div id="imageModal" class="modal">
       <span class="close">&times;</span>
       <img class="modal-content" id="expandedImage" />
