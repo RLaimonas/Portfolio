@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project - Under Construction</title>
+    <title>L. Ramanauskas</title>
+    <link rel="icon" type="image/jpg" href="../../assets/images/icon.png" />
     <link rel="stylesheet" href="../../css/styles.css" />
     <!-- Adjust the path as needed -->
     <link rel="stylesheet" href="../../css/default-page-styles.css" />
@@ -51,32 +52,69 @@
     <!-- Gif on hover player -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var images = document.querySelectorAll(".static-image");
+        var images = document.querySelectorAll(".project-image");
 
+        // Preload all GIFs
         images.forEach(function (img) {
-          var gifSrc = img.getAttribute("data-gif");
-          var staticSrc = img.src;
+          var gifSrc = img.src.replace(".jpg", ".gif");
+          var preloadGif = new Image();
+          preloadGif.src = gifSrc;
 
           img.addEventListener("mouseover", function () {
             img.src = gifSrc;
           });
 
           img.addEventListener("mouseout", function () {
-            img.src = staticSrc;
+            img.src = img.getAttribute("data-static");
           });
+
+          if (!img.getAttribute("data-static")) {
+            img.setAttribute("data-static", img.src);
+          }
         });
       });
     </script>
+    <style>
+      .text-content {
+        font-size: 1.2rem; /* Adjust the size as you prefer */
+        line-height: 1.5; /* To ensure proper line spacing */
+      }
+
+      .games-title {
+        font-size: 1.8rem; /* Makes "Games:" larger */
+        display: block; /* Makes "Games:" take a full line for itself */
+        margin-bottom: 0.5rem; /* Adds a little space below "Games:" */
+      }
+
+      .games-list {
+        padding-left: 20px; /* Adds space before the list for alignment */
+        text-align: left; /* Ensures the alignment is set to left */
+        list-style-position: inside; /* Positions the bullet inside the content flow */
+      }
+
+      .games-list li {
+        margin-left: -20px; /* Pulls list items to the left to align with the rest of the text */
+      }
+    </style>
   </head>
 
   <body>
     <div class="construction-container">
       <!-- Adjust the image path as needed -->
       <h1>Unity3D Game developement courses</h1>
-      <p>
-        Here I explored different game mechanics and styles. Games: 1. 2D Platformer 2. Gyroscope maze runner 3. 3D
-        platformer (cover) 4. Ping-pong 5. Maze runner
-      </p>
+      <p class="text-content">
+        Here I explored different game mechanics and styles.<br /><br />
+        <div class="games-title">Games:</div>
+        <ul class="games-list">
+            <li>2D Platformer</li>
+            <li>Gyroscope maze runner</li>
+            <li>3D platformer (RPG)</li>
+            <li>Ping-pong</li>
+            <li>Maze runner</li>
+        </ul>
+        <br />
+        Images are interactive, hover over them to see the gif.<br />
+    </p>
     </div>
     <div class="project-images">
       <div class="project-image-container">
