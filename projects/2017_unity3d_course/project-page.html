@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L. Ramanauskas</title>
+    <link rel="icon" type="image/jpg" href="../../assets/images/icon.png" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <!-- Adjust the path as needed -->
+    <link rel="stylesheet" href="../../css/default-page-styles.css" />
+    <script>
+      // IMAGE MODAL
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const images = document.querySelectorAll(".project-image");
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImage");
+        const span = document.getElementsByClassName("close")[0];
+
+        images.forEach((img) => {
+          img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+
+            // Ensure the image is loaded before calculating its dimensions
+            modalImg.onload = function () {
+              // Get the dimensions of the image and the window
+              const imgHeight = modalImg.clientHeight;
+              const imgWidth = modalImg.clientWidth;
+              const windowHeight = window.innerHeight;
+              const windowWidth = window.innerWidth;
+
+              // Calculate the top and left positions
+              const topPosition = (windowHeight - imgHeight) / 2;
+              const leftPosition = (windowWidth - imgWidth) / 2;
+              modalImg.style.top = topPosition + "px";
+              modalImg.style.left = leftPosition + "px";
+            };
+          };
+        });
+
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      });
+    </script>
+    <!-- Gif on hover player -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var images = document.querySelectorAll(".project-image");
+
+        // Preload all GIFs
+        images.forEach(function (img) {
+          var gifSrc = img.src.replace(".jpg", ".gif");
+          var preloadGif = new Image();
+          preloadGif.src = gifSrc;
+
+          img.addEventListener("mouseover", function () {
+            img.src = gifSrc;
+          });
+
+          img.addEventListener("mouseout", function () {
+            img.src = img.getAttribute("data-static");
+          });
+
+          if (!img.getAttribute("data-static")) {
+            img.setAttribute("data-static", img.src);
+          }
+        });
+      });
+    </script>
+    <style>
+      .text-content {
+        font-size: 1.2rem; /* Adjust the size as you prefer */
+        line-height: 1.5; /* To ensure proper line spacing */
+      }
+
+      .games-title {
+        font-size: 1.8rem; /* Makes "Games:" larger */
+        display: block; /* Makes "Games:" take a full line for itself */
+        margin-bottom: 0.5rem; /* Adds a little space below "Games:" */
+      }
+
+      .games-list {
+        padding-left: 20px; /* Adds space before the list for alignment */
+        text-align: left; /* Ensures the alignment is set to left */
+        list-style-position: inside; /* Positions the bullet inside the content flow */
+      }
+
+      .games-list li {
+        margin-left: -20px; /* Pulls list items to the left to align with the rest of the text */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="construction-container">
+      <!-- Adjust the image path as needed -->
+      <h1>Unity3D Game developement courses</h1>
+      <p class="text-content">
+        Here I explored different game mechanics and styles.<br /><br />
+        <div class="games-title">Games:</div>
+        <ul class="games-list">
+            <li>2D Platformer</li>
+            <li>Gyroscope maze runner</li>
+            <li>3D platformer (RPG)</li>
+            <li>Ping-pong</li>
+            <li>Maze runner</li>
+        </ul>
+        <br />
+        Images are interactive, hover over them to see the gif.<br />
+    </p>
+    </div>
+    <div class="project-images">
+      <div class="project-image-container">
+        <img src="images/1.jpg" data-gif="images/1.gif" alt="Project Image 1" class="project-image static-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/2.jpg" data-gif="images/2.gif" alt="Project Image 2" class="project-image static-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/3.jpg" data-gif="images/3.gif" alt="Project Image 3" class="project-image static-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/4.jpg" data-gif="images/4.gif" alt="Project Image 4" class="project-image static-image" />
+      </div>
+      <div class="project-image-container">
+        <img src="images/5.jpg" data-gif="images/5.gif" alt="Project Image 5" class="project-image static-image" />
+      </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="expandedImage" />
+      <div id="caption"></div>
+    </div>
+  </body>
+</html>
